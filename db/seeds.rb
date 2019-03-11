@@ -6,43 +6,47 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([{title: 'Frontend'}, {title: 'Backend'}, {title: 'Mobile development'}])
+categories = Category.create([
+                               { title: 'Frontend' },
+                               { title: 'Backend' },
+                               { title: 'Mobile development' }
+                             ])
 
-Test.create([
-              { title: 'Basic Ruby', category: Category.find_by(title: 'Backend') },
-              { title: 'Advanced Ruby', level: 1, category: Category.find_by(title: 'Backend') },
-              { title: 'Basic Rails', category: Category.find_by(title: 'Frontend') },
-              { title: 'Advanced Rails', level: 1, category: Category.find_by(title: 'Frontend') },
-              { title: 'Rails Guru', level: 3, category: Category.find_by(title: 'Frontend') },
-              { title: 'Basic iOS Development', category: Category.find_by(title: 'Mobile Development') },
-              { title: 'Kotlin for Android', level: 2, category: Category.find_by(title: 'Mobile Development') }
-            ])
+tests = Test.create([
+                      { title: 'Basic Ruby', category: categories[1] },
+                      { title: 'Advanced Ruby', level: 1, category: categories[1] },
+                      { title: 'Basic Rails', category: categories[0] },
+                      { title: 'Advanced Rails', level: 1, category: categories[0] },
+                      { title: 'Rails Guru', level: 3, category: categories[0] },
+                      { title: 'Basic iOS Development', category: categories[2] },
+                      { title: 'Kotlin for Android', level: 2, category: categories[2] }
+                    ])
 
-Question.create([
-                  { body: 'What is love?', test: Test.find_by(title: 'Basic Ruby') },
-                  { body: 'Is it advanced?', test: Test.find_by(title: 'Advanced Ruby') },
-                  { body: 'Is it related to railroad?', test: Test.find_by(title: 'Basic Rails') },
-                  { body: 'Are you sure its not about railroad?', test: Test.find_by(title: 'Advanced Rails') },
-                  { body: 'You really sure its nothing to do with trains?', test: Test.find_by(title: 'Rails Guru') },
-                  { body: 'Apple or Android?', test: Test.find_by(title: 'Basic iOS Development') },
-                  { body: 'Android or Apple?', test: Test.find_by(title: 'Kotlin for Android') }
-                ])
+questions = Question.create([
+                              { body: 'What is love?', test: tests[0] },
+                              { body: 'Is it advanced?', test: tests[1] },
+                              { body: 'Is it related to railroad?', test: tests[2] },
+                              { body: 'Are you sure its not about railroad?', test: tests[3] },
+                              { body: 'You really sure its nothing to do with trains?', test: tests[4] },
+                              { body: 'Apple or Android?', test: tests[5] },
+                              { body: 'Android or Apple?', test: tests[6] }
+                            ])
 
 Answer.create([
-                { body: 'Chemical Reaction', question: Question.find_by(body: 'What is love?') },
-                { body: 'Baby dont hurt me', question: Question.find_by(body: 'What is love?'), correct: true },
-                { body: 'No', question: Question.find_by(body: 'Is it advanced?') },
-                { body: 'Yes', question: Question.find_by(body: 'Is it advanced?'), correct: true },
-                { body: 'No', question: Question.find_by(body: 'Is it related to railroad?'), correct: true },
-                { body: 'Yes', question: Question.find_by(body: 'Is it related to railroad?') },
-                { body: 'No', question: Question.find_by(body: 'Are you sure its not about railroad?') },
-                { body: 'Yes', question: Question.find_by(body: 'Are you sure its not about railroad?'), correct: true },
-                { body: 'No', question: Question.find_by(body: 'You really sure its nothing to do with trains?') },
-                { body: 'Yes', question: Question.find_by(body: 'You really sure its nothing to do with trains?'), correct: true },
-                { body: 'Apple', question: Question.find_by(body: 'Apple or Android?'), correct: true },
-                { body: 'Android', question: Question.find_by(body: 'Apple or Android?') },
-                { body: 'Apple', question: Question.find_by(body: 'Android or Apple?') },
-                { body: 'Android', question: Question.find_by(body: 'Android or Apple?'), correct: true }
+                { body: 'Chemical Reaction', question: questions[0] },
+                { body: 'Baby dont hurt me', question: questions[0], correct: true },
+                { body: 'No', question: questions[1] },
+                { body: 'Yes', question: questions[1], correct: true },
+                { body: 'No', question: questions[2], correct: true },
+                { body: 'Yes', question: questions[2] },
+                { body: 'No', question: questions[3] },
+                { body: 'Yes', question: questions[3], correct: true },
+                { body: 'No', question: questions[4] },
+                { body: 'Yes', question: questions[4], correct: true },
+                { body: 'Apple', question: questions[5], correct: true },
+                { body: 'Android', question: questions[5] },
+                { body: 'Apple', question: questions[6] },
+                { body: 'Android', question: questions[6], correct: true }
               ])
 
 # 0 - user, 1 - teacher, 2 - moderator, 3 - admin, 4 - superadmin, 5 - jesus
