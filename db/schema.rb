@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_212306) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id", default: 1
+    t.integer "author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
