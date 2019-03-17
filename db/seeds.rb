@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# 0 - user, 1 - teacher, 2 - moderator, 3 - admin, 4 - superadmin, 5 - jesus
+user = User.create(name: 'Hatatych', email: 'me@hataty.ch', password: 'verystrongpassword', role: 5)
+
 categories = Category.create([
                                { title: 'Frontend' },
                                { title: 'Backend' },
@@ -13,13 +16,13 @@ categories = Category.create([
                              ])
 
 tests = Test.create([
-                      { title: 'Basic Ruby', category: categories[1] },
-                      { title: 'Advanced Ruby', level: 1, category: categories[1] },
-                      { title: 'Basic Rails', category: categories[0] },
-                      { title: 'Advanced Rails', level: 1, category: categories[0] },
-                      { title: 'Rails Guru', level: 3, category: categories[0] },
-                      { title: 'Basic iOS Development', category: categories[2] },
-                      { title: 'Kotlin for Android', level: 2, category: categories[2] }
+                      { title: 'Basic Ruby', category: categories[1], author: user },
+                      { title: 'Advanced Ruby', level: 1, category: categories[1], author: user },
+                      { title: 'Basic Rails', category: categories[0], author: user },
+                      { title: 'Advanced Rails', level: 1, category: categories[0], author: user },
+                      { title: 'Rails Guru', level: 3, category: categories[0], author: user },
+                      { title: 'Basic iOS Development', category: categories[2], author: user },
+                      { title: 'Kotlin for Android', level: 2, category: categories[2], author: user }
                     ])
 
 questions = Question.create([
@@ -48,6 +51,3 @@ Answer.create([
                 { body: 'Apple', question: questions[6] },
                 { body: 'Android', question: questions[6], correct: true }
               ])
-
-# 0 - user, 1 - teacher, 2 - moderator, 3 - admin, 4 - superadmin, 5 - jesus
-User.create(name: 'Hatatych', password: 'verystrongpassword', role: 5)
