@@ -11,6 +11,22 @@ class Test < ApplicationRecord
 
   difficulties = { easy: (0..1), advanced: (2..4), hard: (5..Float::INFINITY) }
 
-  scope :find_by_difficulty, ->(difficulty) { where(level: difficulties[difficulty]) }
-  scope :find_by_category, ->(title) { select(:title).joins(:category).where(categories: { title: title }).order(title: :desc) }
+  scope :find_by_difficulty, ->(level) { where(level: difficulties[determine_difficulty(level)]) }
+  scope :find_by_category, ->(title) { joins(:category).where(categories: { title: title }).order(title: :desc) }
+
+  class << self
+    def by_category(category)
+      find_by_category(category).pluck(:title)
+    end
+
+    private
+
+    def determine_difficulty(level)
+      return :easy if (0..1).cover?(level)
+      return :advanced if (2..4).cover?(level)
+      return :hard if (5..Float::INFINITY).cover?(level)
+
+      nil
+    end
+  end
 end
