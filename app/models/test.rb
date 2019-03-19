@@ -9,22 +9,20 @@ class Test < ApplicationRecord
   validates_numericality_of :level, only_integer: true, greater_than_or_equal_to: 0
   validates :title, uniqueness: { scope: :level }
 
-  difficulties = { easy: (0..1), advanced: (2..4), hard: (5..Float::INFINITY) }
-
-  scope :find_by_difficulty, ->(level) { where(level: difficulties[determine_difficulty(level)]) }
-  scope :find_by_category, ->(title) { joins(:category).where(categories: { title: title }).order(title: :desc) }
+  scope :find_by_difficulty, ->(level) { where(level: determine_difficulty(level)) }
+  scope :find_by_category, ->(title) { joins(:category).where(categories: { title: title }) }
 
   class << self
     def by_category(category)
-      find_by_category(category).pluck(:title)
+      find_by_category(category).order(title: :desc).pluck(:title)
     end
 
     private
 
     def determine_difficulty(level)
-      return :easy if (0..1).cover?(level)
-      return :advanced if (2..4).cover?(level)
-      return :hard if (5..Float::INFINITY).cover?(level)
+      return (0..1) if (0..1).cover?(level)
+      return (2..4) if (2..4).cover?(level)
+      return (5..Float::INFINITY) if (5..Float::INFINITY).cover?(level)
 
       nil
     end
