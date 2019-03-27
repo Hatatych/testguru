@@ -1,0 +1,9 @@
+<h2>Test <%= @test.title %></h2>
+<%= link_to 'Create a question', new_test_question_path(params[:id]) %>
+
+<h3>Questions:</h3>
+<ul>
+  <% @questions.each do |question| %>
+    <li> <%= question.body %>
+  <% end %>
+</ul>

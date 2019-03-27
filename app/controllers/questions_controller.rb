@@ -1,22 +1,32 @@
 class QuestionsController < ApplicationController
-  before_action :find_test
+  before_action :find_test, except: :edit
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render inline: 'Questions: <%= @test.questions.inspect %>'
+    @questions = @test.questions
   end
 
   def show
-    render inline: 'Question: <%= Question.find(params[:id]).inspect %> <br/><br/> Answers: <%= Question.find(params[:id]).answers.inspect %>'
+    @question = @test.questions.find(params[:id])
   end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def create
-    question = Test.find(params[:test_id]).questions.create!(question_params)
+    @question = @test.questions.new(question_params)
 
-    render plain: question.inspect
+    if @question.save
+      redirect_to @test
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @question = Question.find(params[:id])
   end
 
   def destroy
