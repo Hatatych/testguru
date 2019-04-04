@@ -4,6 +4,10 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :email, format: { with: /\w*@\w*\.\w*/, message: 'Must contain at and dot'}
+
+  has_secure_password
 
   def find_tests_by_level(level)
     Test.joins(:user_tests).where(level: level, user_tests: { user_id: id })
