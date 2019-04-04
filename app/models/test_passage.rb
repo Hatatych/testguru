@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  PASSAGE_BORDER = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -15,16 +17,14 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def text_color
-    return 'red' if score < 85
+  def success?
+    return true if score >= PASSAGE_BORDER
 
-    'green'
+    false
   end
 
-  def result_text
-    return 'failed' if score < 85
-
-    'passed'
+  def current_question_position(question)
+    test.questions.find_index(question) + 1
   end
 
   def score
