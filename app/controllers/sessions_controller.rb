@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:redirect_url]
+      redirect_to cookies[:redirect_url] || root_path
     else
-      flash_alert 'Credentials are incorrect. Try again'
+      flash_message :alert, 'Credentials are incorrect. Try again'
       render :new
     end
   end

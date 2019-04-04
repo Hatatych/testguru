@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-  def flash_alert(message)
-    flash[:alert] = message
+  def flash_message(type, message)
+    flash[type] = message
   end
 end
