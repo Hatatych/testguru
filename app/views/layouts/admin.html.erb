@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestGuru</title>
+    <title>Admin Panel | TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,15 +11,12 @@
 
   <body>
     <div class="site">
-      <header class="site-header">
-        <h1 class="site-title"><%= link_to 'TestGuru', root_path %></h1>
+      <header class="site-header admin">
+        <h1 class="site-title admin"><%= link_to 'TestGuru', root_path %></h1>
     
-        <nav class="site-navigation">
+        <nav class="site-navigation admin">
         <% if user_signed_in? %>
-          <li>Welcome, <b><%= current_user.name %></b>!</li>
-          <% if current_user.is_a?(Admin) %>
-            <li><%= link_to 'Admin', admin_root_path %></li>
-          <% end %>
+          <li>Press buttons wisely, <b><%= current_user.name %></b>!</li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <ul>

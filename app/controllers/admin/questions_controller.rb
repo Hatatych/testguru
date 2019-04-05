@@ -1,5 +1,4 @@
-class QuestionsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show edit update destroy]
 
@@ -10,6 +9,37 @@ class QuestionsController < ApplicationController
   end
 
   def show; end
+
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = @test.questions.new(question_params)
+
+    if @question.save
+      redirect_to test_questions_path
+    else
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    @question.update(question_params)
+
+    if @question.save
+      redirect_to test_questions_path(@question.test.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to test_questions_path(@question.test.id)
+  end
 
   private
 
