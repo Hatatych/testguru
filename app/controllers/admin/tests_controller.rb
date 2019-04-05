@@ -1,26 +1,13 @@
 class Admin::TestsController < Admin::BaseController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  before_action :set_test, only: %i[start show]
+  before_action :set_test, only: %i[start show destroy edit]
 
   def index
     @tests = Test.all
   end
 
-  def new
-    @test = Test.new
-  end
-
-  def create
-    @test = Test.new(test_params)
-
-    if @test.save
-      redirect_to admin_root_path
-    else
-      render :new
-    end
-  end
-
+  # View all tests and one test with questions
   def start
     current_user.tests.push(@test)
     redirect_to current_user.test_passage(@test)
@@ -30,11 +17,28 @@ class Admin::TestsController < Admin::BaseController
     @questions = @test.questions
   end
 
+  # New test - DONE
+  def new
+    @test = Test.new
+  end
+
+  def create
+    @test = current_user.created_tests.new(test_params)
+
+    if @test.save
+      redirect_to admin_root_path
+    else
+      render :new
+    end
+  end
+
+  # Edit existing test - DONE
   def edit; end
 
+  # Deleting test - DONE
   def destroy
     @test.destroy
-    redirect_to admin_root
+    redirect_to admin_root_path
   end
 
   private
@@ -44,6 +48,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :category, :author)
+    params.require(:test).permit(:title, :category_id, :author_id)
   end
 end

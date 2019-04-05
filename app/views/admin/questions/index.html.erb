@@ -3,10 +3,10 @@
 <table>
   <tr>
     <th>Body</th>
-    <th colspan="2">Actions</th>
+    <th colspan="3">Actions</th>
   </tr>
   <%= render @questions %>
 </table>
-<br>
-<%= link_to 'New question', new_admin_test_question_path %> | <%= link_to 'Back', admin_test_path(params[:test_id]) %>
-<br>
+<p>
+<%= link_to 'New question', new_admin_test_question_path %> | <%= link_to 'Back', admin_root_path %>
+</p>
