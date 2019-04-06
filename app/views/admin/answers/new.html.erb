@@ -1,6 +1,5 @@
 <h1>New <%= @question.body %> answer:</h1>
 
-<% byebug %>
 <%= render 'form' %>
 
 <%= link_to 'Back', admin_question_answers_path(@question) %>

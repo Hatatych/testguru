@@ -7,12 +7,6 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
 
-  # View all tests and one test with questions
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
-  end
-
   def show
     @questions = @test.questions
   end
@@ -48,6 +42,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :category_id, :author_id)
+    params.require(:test).permit(:title, :category_id)
   end
 end

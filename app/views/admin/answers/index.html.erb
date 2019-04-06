@@ -8,5 +8,5 @@
   <%= render @answers %>
 </table>
 <p>
-<%= link_to 'New answer', new_admin_question_answer_path %> | <%= link_to 'Back', admin_test_questions_path(@question) %>
+<%= link_to 'New answer', new_admin_question_answer_path %> | <%= link_to 'Back', admin_test_questions_path(@question.test) %>
 </p>
