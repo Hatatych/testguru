@@ -1,5 +1,4 @@
-<li>
-<%= "#{test.title}, with #{pluralize(test.questions.count, 'question')}" %>
-<%= link_to 'Show', test_path(test) %>
-<%= button_to 'Start', start_test_path(test) %>
-</li>
+<tr>
+  <td><%= "#{test.title}, with #{pluralize(test.questions.count, 'question')}" %></td>
+  <td><%= button_to 'Start', start_test_path(test) %></td>
+</tr>
