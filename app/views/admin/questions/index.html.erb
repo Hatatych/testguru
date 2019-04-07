@@ -1,12 +1,12 @@
-<h1>Questions for <%= @test.title %></h1>
+<h1><%= t('.header', title: @test.title) %></h1>
 
 <table>
   <tr>
-    <th>Body</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('general.table_body') %></th>
+    <th colspan="3"><%= t('general.table_actions') %></th>
   </tr>
   <%= render @questions %>
 </table>
 <p>
-<%= link_to 'New question', new_admin_test_question_path %> | <%= link_to 'Back', admin_root_path %>
+<%= link_to t('.new_question_link'), new_admin_test_question_path %> | <%= link_to t('general.back_link'), admin_root_path %>
 </p>

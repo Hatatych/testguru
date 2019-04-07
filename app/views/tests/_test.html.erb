@@ -1,4 +1,4 @@
 <tr>
-  <td><%= "#{test.title}, with #{pluralize(test.questions.count, 'question')}" %></td>
-  <td><%= button_to 'Start', start_test_path(test) %></td>
+  <td><%= "#{test.title}, #{t('.question_count', count: test.questions.count)}" %></td>
+  <td><%= button_to t('.start_button_title'), start_test_path(test) %></td>
 </tr>

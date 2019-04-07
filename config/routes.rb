@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'tests#index'
-    resources :tests do
+    resources :tests, except: :show do
       resources :questions, shallow: true do
         resources :answers, shallow: true
       end

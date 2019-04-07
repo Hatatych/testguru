@@ -1,2 +1,91 @@
 ru:
-  hello: "Привет, мир"
+  general:
+    confirm: "Вы уверены?"
+    table_title: "Название"
+    table_body: "Текст"
+    table_actions: "Действия"
+    edit_action: "Изменить"
+    delete_action: "Удалить"
+    back_link: "Назад"
+
+  helpers:
+    select:
+      prompt: "Выберите из списка"
+
+  layouts:
+    application:
+      welcome_text: "Привет, "
+      admin_link: "Админка"
+      logout_link: "Выход"
+      register_link: "Регистрация"
+      login_link: "Войти"
+    admin:
+      welcome_text: "Жми кнопки с умом, "
+      logout_link: "Выход"
+
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
+    footer:
+      thinknetica_link: "Учебный проект в онлайн-школе Thinknetica, %{year}"
+      author_title: "Автор: "
+
+  tests:
+    index:
+      header: "Все тесты:"
+    test:
+      start_button_title: "Начать"
+      question_count:
+        zero: "с %{count} вопросов"
+        one: "с %{count} вопросом"
+        other: "с %{count} вопросами"
+
+  test_passages:
+    show:
+      header: "Прохождение теста %{title}"
+      question_counter: "Вопрос %{current} из %{total}:"
+      next_button_text: "Дальше"
+    result:
+      header: "Вы прошли тест %{title}!"
+      score_header: "Вы набрали"
+      success_text: "Вы прошли тест"
+      failure_text: "Вы провалили тест"
+      all_tests: "Все тесты"
+
+  admin:
+    tests:
+      index:
+        header: "Все тесты:"
+        create_test_link: "Создать новый тест"
+        manage_categories_link: "Управление категориями"
+      test:
+        questions_link: "Вопросы"
+        test_title:
+          zero: "%{title} с %{count} вопросов"
+          one: "%{title} с %{count} вопросом"
+          other: "%{title} с %{count} вопросами"
+      new:
+        header: "Создать новый тест:"
+      edit:
+        header: "Изменить тест %{title}:"
+    questions:
+      header:
+        new: "Добавить вопрос к тесту %{title}"
+        edit: "Изменить вопрос %{title}"
+      index:
+        header: "Вопросы к тесту %{title}:"
+        new_question_link: "Добавить вопрос"
+      question:
+        answers_link: "Ответы"
+    answers:
+      index:
+        header: "Ответы к вопросу %{title}"
+        new_answer_link: "Добавить ответ"
+      new:
+        header: "Ответы к вопросу %{title}"
+      edit:
+        header: "Изменить ответ %{title}"

@@ -13,18 +13,18 @@
     <div class="site">
       <header class="site-header">
         <h1 class="site-title"><%= link_to 'TestGuru', root_path %></h1>
-    
+
         <nav class="site-navigation">
         <% if user_signed_in? %>
-          <li>Welcome, <b><%= current_user.name %></b>!</li>
+          <li><%= t('.welcome_text') %><b><%= current_user.name %></b>!</li>
           <% if current_user.is_a?(Admin) %>
-            <li><%= link_to 'Admin', admin_root_path %></li>
+            <li><%= link_to t('.admin_link'), admin_root_path %></li>
           <% end %>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to t('.logout_link'), destroy_user_session_path, method: :delete %></li>
         <% else %>
           <ul>
-            <li><%= link_to 'Register', new_user_registration_path %></li>
-            <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to t('.register_link'), new_user_registration_path %></li>
+            <li><%= link_to t('.login_link'), new_user_session_path %></li>
           </ul>
         <% end %>
         </nav>

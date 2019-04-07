@@ -1,5 +1,5 @@
 <tr>
 <td><%= "#{answer.body}" %></td>
-<td><%= link_to 'Edit', edit_admin_answer_path(answer) %></td>
-<td><%= link_to 'Delete', admin_answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to t('general.edit_action'), edit_admin_answer_path(answer) %></td>
+<td><%= link_to t('general.delete_action'), admin_answer_path(answer), method: :delete, data: { confirm: t('general.confirm') } %></td>
 </tr>

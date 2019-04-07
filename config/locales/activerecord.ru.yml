@@ -1,0 +1,34 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      category: "Категория"
+      user: "Пользователь"
+      test_passage: "Прохождение"
+
+    attributes:
+      test:
+        title: "Название"
+        category_id: "Категория"
+        level: "Уровень"
+      question:
+        body: "Текст"
+      answer:
+        body: "Текст"
+        correct: "Правильность"
+      category:
+        title: "Название"
+      user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        name: "Имя"
+        last_name: "Фамилия"
+        remember_me: "Запомнить меня"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"
+

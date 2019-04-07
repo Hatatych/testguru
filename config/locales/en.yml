@@ -1,33 +1,87 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  general:
+    confirm: "Are you sure?"
+    table_title: "Title"
+    table_body: "Body"
+    table_actions: "Actions"
+    edit_action: "Edit"
+    delete_action: "Delete"
+    back_link: "Back"
+
+  helpers:
+    select:
+      prompt: "Select one"
+
+  layouts:
+    application:
+      welcome_text: "Welcome, "
+      admin_link: "Admin"
+      logout_link: "Logout"
+      register_link: "Register"
+      login_link: "Login"
+    admin:
+      welcome_text: "Use buttons wisely, "
+      logout_link: "Logout"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    footer:
+      thinknetica_link: "Student project of Thinknetica, developer online school, %{year}"
+      author_title: "Author: "
+
+  tests:
+    index:
+      header: "All tests:"
+    test:
+      start_button_title: "Start"
+      question_count:
+        one: "with %{count} question"
+        other: "with %{count} questions"
+
+  test_passages:
+    show:
+      header: "Passing %{title} test"
+      question_counter: "Question %{current} out of %{total}:"
+      next_button_text: "Next"
+    result:
+      header: "You have completed %{title} test!"
+      score_header: "You scored"
+      success_text: "You have passed the test"
+      failure_text: "You have failed the test"
+      all_tests: "All tests"
+
+  admin:
+    tests:
+      index:
+        header: "All tests:"
+        create_test_link: "Create new test"
+        manage_categories_link: "Manage categories"
+      test:
+        questions_link: "Questions"
+        test_title:
+          one: "%{title} with %{count} question"
+          other: "%{title} with %{count} questions"
+      new:
+        header: "Create new test:"
+      edit:
+        header: "Edit %{title} test:"
+    questions:
+      header:
+        new: "Add question to %{title} test"
+        edit: "Edit question %{title}"
+      index:
+        header: "Questions of %{title} test:"
+        new_question_link: "Add a question"
+      question:
+        answers_link: "Answers"
+    answers:
+      index:
+        header: "Answers to %{title} question"
+        new_answer_link: "Add an answer"
+      new:
+        header: "Answers of %{title} questions"
+      edit:
+        header: "Edit answer %{title}"

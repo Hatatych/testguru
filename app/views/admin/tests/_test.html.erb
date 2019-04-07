@@ -1,6 +1,6 @@
 <tr>
-  <td><%= "#{test.title}, with #{pluralize(test.questions.count, 'question')}" %></td>
-  <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
-  <td><%= link_to 'Questions', admin_test_questions_path(test) %></td>
-  <td><%= link_to 'Delete', admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= t('.test_title', title: test.title, count: test.questions.count) %></td>
+  <td><%= link_to t('general.edit_action'), edit_admin_test_path(test) %></td>
+  <td><%= link_to t('.questions_link'), admin_test_questions_path(test) %></td>
+  <td><%= link_to t('general.delete_action'), admin_test_path(test), method: :delete, data: { confirm: t('general.confirm') } %></td>
 </tr>
