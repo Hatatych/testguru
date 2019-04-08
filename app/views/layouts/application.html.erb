@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,34 +12,15 @@
   </head>
 
   <body>
-    <div class="site">
-      <header class="site-header">
-        <h1 class="site-title"><%= link_to 'TestGuru', root_path %></h1>
-
-        <nav class="site-navigation">
-        <% if user_signed_in? %>
-          <li><%= t('.welcome_text') %><b><%= current_user.name %></b>!</li>
-          <% if current_user.is_a?(Admin) %>
-            <li><%= link_to t('.admin_link'), admin_root_path %></li>
-          <% end %>
-          <li><%= link_to t('.logout_link'), destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <ul>
-            <li><%= link_to t('.register_link'), new_user_registration_path %></li>
-            <li><%= link_to t('.login_link'), new_user_session_path %></li>
-          </ul>
-        <% end %>
-        </nav>
-      </header>
-      <main class="content-wrapper">
-        <article class="site-content">
-        <%= render 'shared/flash' %>
+    <%= render 'shared/nav' %>
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="col col-md-6">
+          <%= render 'shared/flash' %>
           <%= yield %>
-        </article><!-- .site-content -->
-      </main>
-      <footer class="site-footer">
-        <p><%= render 'shared/footer' %></p>
-      </footer>
+        </div>
+      </div>
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
