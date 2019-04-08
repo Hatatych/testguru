@@ -10,31 +10,15 @@
   </head>
 
   <body>
-    <div class="site">
-      <header class="site-header admin">
-        <h1 class="site-title admin"><%= link_to 'TestGuru', root_path %></h1>
-
-        <nav class="site-navigation admin">
-        <% if user_signed_in? %>
-          <li><%= t('.welcome_text') %><b><%= current_user.name %></b>!</li>
-          <li><%= link_to t('.logout_link'), destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <ul>
-            <li><%= link_to 'Register', new_user_registration_path %></li>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-          </ul>
-        <% end %>
-        </nav>
-      </header>
-      <main class="content-wrapper">
-        <article class="site-content">
-        <%= render 'shared/flash' %>
+    <%= render 'shared/nav' %>
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="col col-md-8">
+          <%= render 'shared/flash' %>
           <%= yield %>
-        </article><!-- .site-content -->
-      </main>
-      <footer class="site-footer">
-        <p><%= render 'shared/footer' %></p>
-      </footer>
+        </div>
+      </div>
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>

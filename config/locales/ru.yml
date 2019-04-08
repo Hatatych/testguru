@@ -13,17 +13,6 @@ ru:
     select:
       prompt: "Выберите из списка"
 
-  layouts:
-    application:
-      welcome_text: "Привет, "
-      admin_link: "Админка"
-      logout_link: "Выход"
-      register_link: "Регистрация"
-      login_link: "Войти"
-    admin:
-      welcome_text: "Жми кнопки с умом, "
-      logout_link: "Выход"
-
   shared:
     errors:
       header:
@@ -34,6 +23,14 @@ ru:
     footer:
       thinknetica_link: "Учебный проект в онлайн-школе Thinknetica, %{year}"
       author_title: "Автор: "
+    nav:
+      welcome_text: "Привет, "
+      admin_link: "Админка"
+      logout_link: "Выход"
+      register_link: "Регистрация"
+      login_link: "Войти"
+      admin_welcome_text: "Жми кнопки с умом, "
+      logout_link: "Выход"
 
   tests:
     index:
