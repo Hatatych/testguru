@@ -1,4 +1,11 @@
 module ApplicationHelper
+  FLASH_TO_BOOTSTRAP = {
+    notice: 'alert alert-primary',
+    success: 'alert alert-success',
+    error: 'alert alert-danger',
+    alert: 'alert alert-warning'
+}.freeze
+
   def current_year
     Time.current.year
   end
@@ -12,11 +19,6 @@ module ApplicationHelper
   end
 
   def flash_class(level)
-    case level
-    when 'notice' then 'alert alert-primary'
-    when 'success' then 'alert alert-success'
-    when 'error' then 'alert alert-danger'
-    when 'alert' then 'alert alert-warning'
-    end
+    FLASH_TO_BOOTSTRAP[level.to_sym]
   end
 end
