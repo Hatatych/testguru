@@ -7,6 +7,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admin_required!
-    redirect_to root_path, alert: 'You have no permissions to view this page!' unless current_user.admin?
+    redirect_to root_path, alert: I18n.t('general.no_permission') unless current_user.admin?
   end
 end
