@@ -18,6 +18,9 @@ class TestPassagesController < ApplicationController
       { alert: t('.failure') }
     end
 
+    gist = Gist.new(user: current_user, question: @test_passage.current_question, url: result.url)
+    flash[:alert] = 'Error has occured while saving Gist info into DB!' unless gist.save
+
     redirect_to @test_passage, flash_options
   end
 

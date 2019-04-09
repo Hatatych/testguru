@@ -14,18 +14,6 @@ en:
   helpers:
     select:
       prompt: "Select one"
-      
-
-  layouts:
-    application:
-      welcome_text: "Welcome, "
-      admin_link: "Admin"
-      logout_link: "Logout"
-      register_link: "Register"
-      login_link: "Login"
-    admin:
-      welcome_text: "Use buttons wisely, "
-      logout_link: "Logout"
 
   shared:
     errors:
@@ -35,6 +23,14 @@ en:
     footer:
       thinknetica_link: "Student project of Thinknetica, developer online school, %{year}"
       author_title: "Author: "
+    nav:
+      welcome_text: "Welcome,  "
+      admin_link: "Admin panel"
+      logout_link: "Logout"
+      register_link: "Register"
+      login_link: "Login"
+      admin_welcome_text: "Use buttons wisely, "
+      logout_link: "Logout"
 
   tests:
     index:
@@ -67,6 +63,7 @@ en:
         header: "All tests:"
         create_test_link: "Create new test"
         manage_categories_link: "Manage categories"
+        gists: "All Gists"
       test:
         questions_link: "Questions"
         test_title:
@@ -76,6 +73,9 @@ en:
         header: "Create new test:"
       edit:
         header: "Edit %{title} test:"
+    gists:
+      index:
+        header: "All gists"
     questions:
       header:
         new: "Add question to %{title} test"
