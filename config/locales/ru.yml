@@ -8,6 +8,8 @@ ru:
     delete_action: "Удалить"
     back_link: "Назад"
     no_permission: "Недостаточно прав для просмотра этой страницы"
+    here_link: "туть"
+    gist_title: "Вопрос к тесту %{test} на TestGuru"
 
   helpers:
     select:
@@ -43,10 +45,14 @@ ru:
         other: "с %{count} вопросами"
 
   test_passages:
+    gist:
+      success: "Gist сгенерирован! Ссылка: %{url}"
+      failure: "Во время генерации Gist произошла ошибка!"
     show:
       header: "Прохождение теста %{title}"
       question_counter: "Вопрос %{current} из %{total}:"
       next_button_text: "Дальше"
+      gist_question: "Gist'ануть вопрос"
     result:
       header: "Вы прошли тест %{title}!"
       score_header: "Вы набрали"
@@ -60,6 +66,7 @@ ru:
         header: "Все тесты:"
         create_test_link: "Создать новый тест"
         manage_categories_link: "Управление категориями"
+        gists: "Все Gist'ы"
       test:
         questions_link: "Вопросы"
         test_title:
@@ -70,6 +77,12 @@ ru:
         header: "Создать новый тест:"
       edit:
         header: "Изменить тест %{title}:"
+    gists:
+      index:
+        header: "Все Gist'ы"
+        table_user: "Пользователь"
+        table_question: "Вопрос"
+        table_gist: "Ссылка на гист"
     questions:
       header:
         new: "Добавить вопрос к тесту %{title}"
