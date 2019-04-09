@@ -12,14 +12,12 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
 
-    flash_options = if result.url.present?
-      { notice: t('.success', url: "<a href=\"https://gist.github.com/Hatatych/#{result.id}\">#{t('general.here_link')}</a>") }
+    if result.url.present?
+      current_users.gists.create(question: @test_passage.current_question, url: result.url)
+      flash_options = { notice: t('.success', url: "<a href=\"https://gist.github.com/Hatatych/#{result.id}\">#{t('general.here_link')}</a>") }
     else
-      { alert: t('.failure') }
+      flash_options = { alert: t('.failure') }
     end
-
-    gist = Gist.new(user: current_user, question: @test_passage.current_question, url: result.url)
-    flash[:alert] = 'Error has occured while saving Gist info into DB!' unless gist.save
 
     redirect_to @test_passage, flash_options
   end
