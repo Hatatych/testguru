@@ -8,10 +8,13 @@ ru:
     delete_action: "Удалить"
     back_link: "Назад"
     no_permission: "Недостаточно прав для просмотра этой страницы"
+    here_link: "туть"
+    gist_title: "Вопрос к тесту %{test} на TestGuru"
 
   helpers:
     select:
       prompt: "Выберите из списка"
+      
 
   shared:
     errors:
@@ -43,10 +46,14 @@ ru:
         other: "с %{count} вопросами"
 
   test_passages:
+    gist:
+      success: "Gist сгенерирован! Ссылка: %{url}"
+      failure: "Во время генерации Gist произошла ошибка!"
     show:
       header: "Прохождение теста %{title}"
       question_counter: "Вопрос %{current} из %{total}:"
       next_button_text: "Дальше"
+      gist_question: "Gist'ануть вопрос"
     result:
       header: "Вы прошли тест %{title}!"
       score_header: "Вы набрали"

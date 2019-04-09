@@ -8,10 +8,13 @@ en:
     delete_action: "Delete"
     back_link: "Back"
     no_permission: "You have no permissions to view this page"
+    here_link: "here"
+    gist_title: "Question about %{test} on TestGuru"
 
   helpers:
     select:
       prompt: "Select one"
+      
 
   layouts:
     application:
@@ -43,10 +46,14 @@ en:
         other: "with %{count} questions"
 
   test_passages:
+    gist:
+      success: "Gist was generated! Link: %{url}"
+      failure: "Error occured while saving Gist!"
     show:
       header: "Passing %{title} test"
       question_counter: "Question %{current} out of %{total}:"
       next_button_text: "Next"
+      gist_question: "Gist'ануть вопрос"
     result:
       header: "You have completed %{title} test!"
       score_header: "You scored"

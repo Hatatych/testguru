@@ -13,6 +13,9 @@
         </p>
       <% end %>
 
+      <p>
+      <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-primary btn-block' %>
+      </p>
       <%= form.submit t('.next_button_text'), class: 'btn btn-success btn-block' %>
     <% end %>
   </div>

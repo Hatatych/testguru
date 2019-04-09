@@ -1,12 +1,24 @@
 class TestPassagesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_test_passage, on: %i[show result update]
+  before_action :set_test_passage, on: %i[show result update gist]
 
   def show
   end
 
   def result
+  end
+
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question).call
+
+    flash_options = if result.url.present?
+      { notice: t('.success', url: "<a href=\"https://gist.github.com/Hatatych/#{result.id}\">#{t('general.here_link')}</a>") }
+    else
+      { alert: t('.failure') }
+    end
+
+    redirect_to @test_passage, flash_options
   end
 
   def update
