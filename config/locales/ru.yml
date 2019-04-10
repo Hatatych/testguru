@@ -5,6 +5,7 @@ ru:
     table_body: "Текст"
     table_actions: "Действия"
     edit_action: "Изменить"
+    quick_edit_action: "Инлайн"
     delete_action: "Удалить"
     back_link: "Назад"
     no_permission: "Недостаточно прав для просмотра этой страницы"
@@ -42,6 +43,7 @@ ru:
       question_count:
         zero: "с %{count} вопросов"
         one: "с %{count} вопросом"
+        few: "с %{count} вопросами"
         other: "с %{count} вопросами"
 
   test_passages:
@@ -72,7 +74,10 @@ ru:
         test_title:
           zero: "%{title} с %{count} вопросов"
           one: "%{title} с %{count} вопросом"
+          few: "%{title} с %{count} вопросами"
           other: "%{title} с %{count} вопросами"
+      form_inline:
+        submit: "ОК"
       new:
         header: "Создать новый тест:"
       edit:

@@ -5,6 +5,7 @@ en:
     table_body: "Body"
     table_actions: "Actions"
     edit_action: "Edit"
+    quick_edit_action: "Inline"
     delete_action: "Delete"
     back_link: "Back"
     no_permission: "You have no permissions to view this page"
@@ -69,6 +70,8 @@ en:
         test_title:
           one: "%{title} with %{count} question"
           other: "%{title} with %{count} questions"
+      form_inline:
+        submit: "ОК"
       new:
         header: "Create new test:"
       edit:
