@@ -27,6 +27,13 @@ class TestPassage < ApplicationRecord
     test.questions.find_index(question) + 1
   end
 
+  def progress_percentage
+    current_position = current_question_position(current_question) - 1
+    total_questions = test.questions.count
+
+    (current_position.to_f / total_questions * 100).to_i
+  end
+
   def score
     (self.correct_questions.to_f / test.questions.count * 100).to_i
   end
