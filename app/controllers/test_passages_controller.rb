@@ -13,7 +13,7 @@ class TestPassagesController < ApplicationController
     result = GistQuestionService.new(@test_passage.current_question).call
 
     if result.url.present?
-      current_users.gists.create(question: @test_passage.current_question, url: result.url)
+      current_user.gists.create(question: @test_passage.current_question, url: result.url)
       flash_options = { notice: t('.success', url: "<a href=\"https://gist.github.com/Hatatych/#{result.id}\">#{t('general.here_link')}</a>") }
     else
       flash_options = { alert: t('.failure') }
