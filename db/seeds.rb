@@ -13,13 +13,13 @@ categories = Category.create([
                              ])
 
 tests = Test.create([
-                      { title: 'Basic Ruby', category: categories[1] },
-                      { title: 'Advanced Ruby', level: 1, category: categories[1] },
-                      { title: 'Basic Rails', category: categories[0] },
-                      { title: 'Advanced Rails', level: 1, category: categories[0] },
-                      { title: 'Rails Guru', level: 3, category: categories[0] },
-                      { title: 'Basic iOS Development', category: categories[2] },
-                      { title: 'Kotlin for Android', level: 2, category: categories[2] }
+                      { title: 'Basic Ruby', category: categories[1], author: User.first },
+                      { title: 'Advanced Ruby', level: 1, category: categories[1], author: User.first },
+                      { title: 'Basic Rails', category: categories[0], author: User.first },
+                      { title: 'Advanced Rails', level: 1, category: categories[0], author: User.first },
+                      { title: 'Rails Guru', level: 3, category: categories[0], author: User.first },
+                      { title: 'Basic iOS Development', category: categories[2], author: User.first },
+                      { title: 'Kotlin for Android', level: 2, category: categories[2], author: User.first }
                     ])
 
 questions = Question.create([
