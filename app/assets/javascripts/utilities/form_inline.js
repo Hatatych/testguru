@@ -8,8 +8,8 @@ document.addEventListener('turbolinks:load', function () {
   }
 
   var errors = document.querySelector('.resource-errors')
-  var baseLink = 'http://localhost:3000/admin'
-  var altLink = 'http://lvh.me:3000/admin'
+  var baseLink = 'http://hatatestguru.herokuapp.com/admin'
+  var altLink = 'http://hatatestguru.herokuapp.com/admin'
 
   if (errors && ( document.referrer == baseLink || document.referrer == altLink)) {
     var resourceId = errors.dataset.resourceId
