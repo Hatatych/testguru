@@ -46,6 +46,10 @@ ru:
         few: "с %{count} вопросами"
         other: "с %{count} вопросами"
 
+  feedbacks:
+    new:
+      header: "Оставьте обратную связь"
+
   test_passages:
     gist:
       success: "Gist сгенерирован! Ссылка: %{url}"

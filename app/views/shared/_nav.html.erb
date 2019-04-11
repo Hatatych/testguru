@@ -6,6 +6,7 @@
     <% if current_user.admin? %>
       <%= link_to t('.admin_link'), admin_root_path %> |
     <% end %>
+      <%= link_to 'Обратная связь', feedback_path %> |
       <%= link_to t('.logout_link'), destroy_user_session_path, method: :delete %>
   <% else %>
       <%= link_to t('.register_link'), new_user_registration_path %> |

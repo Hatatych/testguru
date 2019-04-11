@@ -42,6 +42,10 @@ en:
         one: "with %{count} question"
         other: "with %{count} questions"
 
+  feedbacks:
+    new:
+      header: "Оставьте обратную связь"
+
   test_passages:
     gist:
       success: "Gist was generated! Link: %{url}"

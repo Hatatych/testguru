@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'feedback', to: 'feedbacks#new'
+  post 'feedback', to: 'feedbacks#send_mail'
   get 'gists/index'
   root 'tests#index'
 
