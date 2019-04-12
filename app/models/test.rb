@@ -27,4 +27,10 @@ class Test < ApplicationRecord
       nil
     end
   end
+
+  def empty?
+    return true if questions.count == 0
+
+    false
+  end
 end

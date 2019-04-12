@@ -9,6 +9,8 @@ class TestPassage < ApplicationRecord
   after_commit :after_commit_set_next_question, on: :update
 
   def accept!(answer_ids)
+    return nil if answer_ids.nil?
+    
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
   end

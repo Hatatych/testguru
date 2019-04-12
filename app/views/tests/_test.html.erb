@@ -1,4 +1,4 @@
 <tr>
   <td><%= "#{test.title}, #{t('.question_count', count: test.questions.count)}" %></td>
-  <td><%= button_to t('.start_button_title'), start_test_path(test), class: 'btn btn-secondary' %></td>
+  <td><%= button_to t('.start_button_title'), start_test_path(test), class: 'btn btn-secondary', disabled: test.empty? %></td>
 </tr>
