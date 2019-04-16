@@ -1,0 +1,6 @@
+<h1><%= t('.header', name: current_user.name, surname: current_user.last_name) %></h1>
+<div class="container">
+  <div class="row">
+    <%= render @user_badges %>
+  </div>
+</div>

@@ -25,6 +25,10 @@ class TestPassage < ApplicationRecord
     false
   end
 
+  def failed?
+    !success?
+  end
+
   def current_question_position(question)
     test.questions.find_index(question) + 1
   end

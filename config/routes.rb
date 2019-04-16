@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_badges/index'
   get 'feedback', to: 'feedbacks#new'
   post 'feedback', to: 'feedbacks#send_mail'
   get 'gists/index'
@@ -10,6 +11,12 @@ Rails.application.routes.draw do
   resources :tests, only: :index do
     member do
       post :start
+    end
+  end
+  
+  resources :users, only: :show do
+    member do
+      get 'badges', to: 'user_badges#index'
     end
   end
 
