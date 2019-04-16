@@ -6,7 +6,7 @@
     <% if current_user.admin? %>
       <%= link_to t('.admin_link'), admin_root_path %> |
     <% end %>
-      <%= link_to t('.badges'), badges_user_path(current_user) %> |
+      <%= link_to t('.badges'), badges_path %> |
       <%= link_to t('.feedback'), feedback_path %> |
       <%= link_to t('.logout_link'), destroy_user_session_path, method: :delete %>
   <% else %>

@@ -7,10 +7,7 @@ class AssignBadgeService
 
   def call
     METHODS_AND_ICONS.each do |method, name|
-      if send method
-        new_badge = @current_user.user_badges.new(badge: Badge.find_by(name: name))
-        new_badge.save!
-      end
+      @current_user.user_badges.create(badge: Badge.find_by(name: name)) if send method
     end
   end
 

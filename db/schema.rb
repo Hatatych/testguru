@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2019_04_16_131142) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "name"
-    t.string "logo"
+    t.string "name", null: false
+    t.string "logo", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_badges_on_name"
