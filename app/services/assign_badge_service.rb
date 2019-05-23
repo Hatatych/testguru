@@ -6,8 +6,8 @@ class AssignBadgeService
   end
 
   def call
-    METHODS_AND_ICONS.each do |method, name|
-      @current_user.user_badges.create(badge: Badge.find_by(name: name)) if send method
+    Badge.each do |badge|
+      @current_user.user_badges.create(badge: badge) if send badge.method.to_sym
     end
   end
 
@@ -15,6 +15,18 @@ class AssignBadgeService
 
   def first_try?
     return false if TestPassage.where(test: @test_passage.test).count > 1 || @test_passage.failed?
+
+    true
+  end
+
+  def all_backends?
+    return false if 1
+
+    true
+  end
+
+  def all_level?
+    return false if 1
 
     true
   end

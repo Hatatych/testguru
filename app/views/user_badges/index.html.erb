@@ -1,6 +1,12 @@
 <h1><%= t('.header', name: current_user.name, surname: current_user.last_name) %></h1>
 <div class="container">
+  <h3>Полученные бейджи</h3>
   <div class="row">
     <%= render @user_badges %>
+  </div>
+  <br>
+  <h3>Все доступные бейджи</h3>
+  <div class="row">
+    <%= render partial: "badges", collection: @badges, as: :badge %>
   </div>
 </div>

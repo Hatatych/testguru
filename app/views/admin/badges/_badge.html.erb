@@ -1,0 +1,6 @@
+<tr>
+  <td class="align-middle"><%= fa_icon "#{badge.logo} 2x" %></td>
+  <td class="align-middle"><%= badge.name %></td>
+  <td class="align-middle"><%= link_to t('general.edit_action'), edit_admin_badge_path(badge) %></td>
+  <td class="align-middle"><%= link_to t('general.delete_action'), admin_badge_path(badge), method: :delete, data: { confirm: t('general.confirm') } %></td>
+</tr>

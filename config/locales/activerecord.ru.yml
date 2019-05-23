@@ -7,6 +7,7 @@ ru:
       category: "Категория"
       user: "Пользователь"
       test_passage: "Прохождение"
+      badge: "Бэйдж"
 
     attributes:
       test:
@@ -27,6 +28,10 @@ ru:
         name: "Имя"
         last_name: "Фамилия"
         remember_me: "Запомнить меня"
+      badge:
+        name: "Название"
+        logo: "Логотип"
+        method: "Метод"
 
     errors:
       messages:

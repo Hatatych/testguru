@@ -78,6 +78,7 @@ ru:
         create_test_link: "Создать новый тест"
         manage_categories_link: "Управление категориями"
         gists: "Все Gist'ы"
+        badges: "Управление бэйджами"
       test:
         questions_link: "Вопросы"
         test_title:
@@ -114,3 +115,6 @@ ru:
         header: "Ответы к вопросу %{title}"
       edit:
         header: "Изменить ответ %{title}"
+    badges:
+      index:
+        header: 'Управление бэйджами'
