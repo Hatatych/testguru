@@ -14,19 +14,19 @@ class AssignBadgeService
   private
 
   def first_try?
-    return false if TestPassage.where(test: @test_passage.test).count > 1 || @test_passage.failed?
+    return false if current_user.test_passages.where(test: @test_passage.test).count > 1 || @test_passage.failed?
 
     true
   end
 
   def all_backends?
-    return false if 1
+    return false if Test.where(category: Category.where(title: 'Backend')).where.not(id: u.test_passages.select(:test_id)).exists?
 
     true
   end
 
   def all_level?
-    return false if 1
+    return false if Test.where(level: 0).where.not(id: current_user.test_passages.select(:test_id)).exists?
 
     true
   end
