@@ -1,7 +1,7 @@
 class TestPassagesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_test_passage, on: %i[show result update gist]
+  before_action :set_test_passage, on: %i[create show result update gist]
 
   def show
   end
@@ -24,7 +24,10 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if @test_passage.accept!(params[:answer_ids]).nil?
+    if @test_passage.expired?
+      flash[:alert] = 'Время, отведенное на тест, истекло!'
+      redirect_to result_test_passage_path(@test_passage)
+    elsif @test_passage.accept!(params[:answer_ids]).nil?
       flash[:alert] = 'Необходимо выбрать хотя бы 1 ответ'
       render :show
     else
