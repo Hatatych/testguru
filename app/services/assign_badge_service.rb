@@ -1,5 +1,4 @@
 class AssignBadgeService
-  METHODS_AND_ICONS = { first_try?: 'First try!' }.freeze
   def initialize(test_passage, current_user)
     @test_passage = test_passage
     @current_user = current_user

@@ -20,9 +20,7 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def update
-    @badge.update(badge_params)
-
-    if @badge.save
+    if @badge.update(badge_params)
       redirect_to admin_badges_path
     else
       render :edit
