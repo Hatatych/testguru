@@ -7,6 +7,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    AssignBadgeService.new(@test_passage, current_user).call
   end
 
   def gist

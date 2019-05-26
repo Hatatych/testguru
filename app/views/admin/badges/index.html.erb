@@ -1,0 +1,13 @@
+<h1><%= t('.header') %></h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table">
+  <tr>
+    <th>Логотип</th>
+    <th><%= t('general.table_title') %></th>
+    <th colspan="4"><%= t('general.table_actions') %></th>
+  </tr>
+  <%= render @badges %>
+</table>
+<%= link_to 'Создать новый бэйдж', new_admin_badge_path %> | <%= link_to t('general.back_link'), admin_root_path %>
