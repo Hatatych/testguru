@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
+  before_validation :before_validation_set_deadline, on: :create
   before_validation :before_validation_set_next_question, on: :update
 
   def accept!(answer_ids)
@@ -29,6 +30,12 @@ class TestPassage < ApplicationRecord
     !success?
   end
 
+  def expired?
+    return true if Time.current > deadline
+
+    false
+  end
+
   def current_question_position(question)
     test.questions.find_index(question) + 1
   end
@@ -48,6 +55,10 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
+  end
+
+  def before_validation_set_deadline
+    self.deadline = Time.current + test.passage_time.minutes
   end
 
   def correct_answer?(answer_ids)

@@ -36,6 +36,7 @@ gem 'rails-i18n', '~> 5.0.0'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.0'
+gem 'momentjs-rails'
 gem 'octicons_helper'
 gem 'font-awesome-rails'
 

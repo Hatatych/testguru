@@ -1,5 +1,7 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
+<%= content_tag :div, nil, id: 'deadline', data: { timestamp: @test_passage.deadline.to_i } %>
+
 <div class="card border-primary">
   <div class="card-body">
     <b><%= t('.question_counter', current: @test_passage.current_question_position(@test_passage.current_question), total: @test_passage.test.questions.count) %></b><br>
@@ -21,7 +23,7 @@
       <p>
       <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-primary btn-block' %>
       </p>
-      <%= form.submit t('.next_button_text'), class: 'btn btn-success btn-block' %>
+      <%= form.submit t('.next_button_text'), class: 'btn btn-success btn-block', id: 'click_anchor' %>
     <% end %>
   </div>
 </div>
