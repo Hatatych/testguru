@@ -43,6 +43,7 @@ gem 'font-awesome-rails'
 # Networking
 gem 'faraday'
 gem "octokit", "~> 4.0"
+gem "nokogiri", ">= 1.10.4"
 
 # ENV variables
 gem 'dotenv-rails', groups: [:development, :test]
